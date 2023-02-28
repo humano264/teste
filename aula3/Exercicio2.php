@@ -1,8 +1,8 @@
 <?php
-$a = 5//fgets(STDIN);
-$b = 8//prfgets(STDIN);
+$a = readline(); //-25;// fgets(STDIN);
+$b =readline(); //10;//fgets(STDIN);
 
-$x = $a + $b;
+$X = $a + $b; 
 
-echo "x = $x\n"
+echo "X = $X\n";
 ?> 
