@@ -1,35 +1,34 @@
-<?php 
-#include <iostream>
-using namespace std;
-int main()
-{
-int item, quant;
-float n1=4.00, n2=4.50, n3=5.00, n4=2.00, n5=1.50, valor;
-   
-cin >> item;
-   
-cin >> quant;
-   
-if (item==1){
-valor=n1*quant;
-   } 
-else if (item==2){
-valor=n2*quant;
-   } 
-else if (item==3){
-valor=n3*quant;
-   } 
-else if (item==4){
-valor=n4*quant;
-   } 
-else if (item==5){
-valor=n5*quant;
-   }
-cout << fixed;
-cout.precision(2);
+<?php
+$notas = fgets(STDIN);
+$valores = explode(" ", $notas);
+$nota1 = (float) $valores[0];
+$nota2 = (float) $valores[1];
+$nota3 = (float) $valores[2];
+$nota4 = (float) $valores[3];
+
+$media = ($nota1 * 2 + $nota2 * 3 + $nota3 * 4 + $nota4) / 10;
+
+printf("Media: %.1f\n", $media);
+
+if ($media >= 7.0) {
+    echo "Aluno aprovado.\n";
+} elseif ($media < 5.0) {
+    echo "Aluno reprovado.\n";
+} else {
+    echo "Aluno em exame.\n";
     
-cout << "Total: R$ " << valor << endl;
+    $nota_exame = (float) fgets(STDIN);
     
-return 0;   
+    printf("Nota do exame: %.1f\n", $nota_exame);
+    
+    $media_final = ($media + $nota_exame) / 2;
+    
+    if ($media_final >= 5.0) {
+        echo "Aluno aprovado.\n";
+    } else {
+        echo "Aluno reprovado.\n";
+    }
+    
+    printf("Media final: %.1f\n", $media_final);
 }
 ?>
