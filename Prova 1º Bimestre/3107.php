@@ -1,12 +1,16 @@
 <?php
-$linha1 = readline();
-$linha2 = readline();
 
-list($x1, $y1) = sscanf($linha1, "%f %f");
+// lê as entradas do usuário
+$velocidadeMedia = floatval(fgets(STDIN));
+$distanciaViagem = floatval(fgets(STDIN));
+$consumoMedio = floatval(fgets(STDIN));
 
-list($x2, $y2) = sscanf($linha2, "%f %f");
+// calcula o tempo necessário em horas para completar a viagem
+$tempoViagem = $distanciaViagem / $velocidadeMedia;
 
-$distancia = sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2));
+// calcula o total de combustível gasto
+$combustivelGasto = $distanciaViagem / $consumoMedio;
 
-echo number_format($distancia, 4, '.', '') . "\n";
-?>
+// imprime os resultados
+printf("%.2f\n", $tempoViagem);
+printf("%.2f\n", $combustivelGasto);
